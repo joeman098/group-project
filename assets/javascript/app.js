@@ -32,9 +32,9 @@ function apicall(){
 		}
 		// newData.text(data.title)
 		newRow.append($("<td>").append($("<img>").attr("src","https://image.tmdb.org/t/p/w185_and_h278_bestv2/"+data.poster)))
-				.append($("<td>").text(data.title || data.tvtitle))
+				.append($("<td id='title'>").text(data.title || data.tvtitle))
 				.append($("<td>").attr("id","description").text(data.overview))
-				.append($("<td>")).append($("<input>").attr("type","checkbox"));
+				.append($("<td>").append($("<input>").attr("type","checkbox")));
 
 
 
@@ -50,11 +50,13 @@ $(document).ready(function(){
 
 $("#search").on("submit", function(event){
 	event.preventDefault();
+	$("#resultTable").empty();
 	query = $("#searchbar").val();
 	type = $('input[name=searchType]:checked').val(); 
 	console.log(type);
 	console.log(query);
 	apicall();
+	$("#searchbar").val('');
 });
 
 
