@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>homepage</title>
+	<title>search page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
@@ -13,13 +13,37 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+
+
 </head>
 <body>
-	<header><h1 class="text-center">Pr0j3ct $ive</h1></header>
+	<header><h1>Pr0j3ct $ive</h1></header>
+	<form id="search">
+		<input type="text" name="search" id="searchbar">
+		<input type="submit" id="searchSubmit"><br>
+		<input type="radio" name="searchType" value="movie" checked>Movie
+		<input type="radio" name="searchType" value="tv">TV
+		<input type="radio" name="searchType" value="sports">sports
+	</form>
+	<div id="container">
+	<table class="table table-striped">
+  <thead>
+    <tr>
+    	<th scope="col"></th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Add to list</th>
+    </tr>
+  </thead>
+  	<tbody id="resultTable">
+
+
+   </tbody>
+</table>
+</div>
+
 	
 
-
-
-
+	
 </body>
 </html>
