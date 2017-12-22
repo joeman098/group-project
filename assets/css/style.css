@@ -1,9 +1,4 @@
-/*
-#description{
-	width: 250px;
-	color:blue;
 
-}*/
 #container{
 	margin-left: 100px;
 	margin-right: 100px;
@@ -18,4 +13,10 @@ th {
 #title {
 	white-space: nowrap;
 	overflow: hidden;
+}
+#register{
+	padding-top: 15%;
+}
+#registerButton{
+	font-size: 50px;
 }
