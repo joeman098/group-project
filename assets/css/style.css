@@ -9,3 +9,13 @@
 	margin-right: 100px;
 	color: red;
 }
+
+th {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#title {
+	white-space: nowrap;
+	overflow: hidden;
+}
