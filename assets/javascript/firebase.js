@@ -17,6 +17,8 @@
   var isAnonymous
   var providerData
 
+  var loged = false ;
+
 
 
 
@@ -58,11 +60,12 @@ function onLogIn(){
     isAnonymous = user.isAnonymous;
     uid = user.uid;
     providerData = user.providerData;
+    loged = true;
+
     // ...
           } 
 else {
-    // User is signed out.
-    // ...
+    loged = false;
       }
 
 
@@ -84,6 +87,13 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
 });
 };
 
+function logOut(){
+firebase.auth().signOut().then(function() {
+  location.reload();
+}).catch(function(error) {
+  // An error happened.
+});
+};
 
 
 
@@ -101,7 +111,9 @@ $(document).ready(function(){
     });
 
 
-
+$("#logOut").on("click", function(){
+  logOut();
+});
 
 
 

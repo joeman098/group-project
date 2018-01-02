@@ -31,6 +31,7 @@ function apicall(){
 		tvtitle:response.results[i].original_name,
 		date:response.results[i].release_date,
 		tvdate:response.results[i].first_air_date,
+		id:response.results[i].id
 		}
 		// newData.text(data.title)
 	
@@ -40,12 +41,21 @@ function apicall(){
 		newRow.append($("<td>").append($("<img>").attr("src","https://image.tmdb.org/t/p/w185_and_h278_bestv2/"+data.poster)))
 				.append($("<td id='title'>").html((data.title || data.tvtitle) +"<br>"+ (data.date|| data.tvdate)))
 				.append($("<td>").attr("id","description").text(data.overview))
-				.append($("<td>").append($("<input>").attr("type","checkbox")));
+				.append($("<td>").append($("<button>").text("save").addClass("btn-info").attr("id","saveButton").attr("value",data.id)));
 
+				if(!loged){
+					$("#saveButton").attr("id","notloged").text("log In to save");
+				}
 
 
 
 		$("#resultTable").append(newRow);
+
+		$("#saveButton").on("click", function(){
+			id = this.value
+			console.log(id);
+		
+})
 	};
 });
 };
@@ -63,7 +73,10 @@ $("#search").on("submit", function(event){
 	console.log(query);
 	apicall();
 	$("#searchbar").val('');
+	// if(loged){
+	// $("#container").append($("<button>").text("save").addClass("btn-info").attr("id","saveButton"));
+ // };
 });
 
-console.log(test);
+
 });
