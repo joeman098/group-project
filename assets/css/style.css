@@ -20,3 +20,22 @@ th {
 #registerButton{
 	font-size: 50px;
 }
+
+#search {
+	text-align: center;
+}
+
+#searchSubmit {
+	background-color: #9933CC;
+	font-weight: bold;
+	color: white;
+	border-color: #9933CC;
+}
+
+#searchbar{
+	width: 40%;
+}
+
+header {
+	text-align: center;
+}
