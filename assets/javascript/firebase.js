@@ -13,24 +13,44 @@
 
 function newAccount(){
 
-  var password = $("#passwordInput").val().trim();
-  var email = $("#emailInput").val().trim();
+  var password = $("#passwordReg").val().trim();
+  var email = $("#emailReg").val().trim();
   console.log(email);
 
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
+    // if(errorCode){
+    //   $("#regFoot").append(errorCode + errorMessage);
+    // }
   // ...
 });
 };
+function onLogIn(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    //all the loginshit goes here 
+
+    if(user){
+
+      }
+
+
+
+
+});
+}
+
+
+
+
+
+
 
 $(document).ready(function(){
 
   $("#registerForm").on("submit", function(event){
-     event.preventDefault();
-     test = $('input[id=passwordInput]:value').val();
-    console.log(test);
+    event.preventDefault();
     newAccount();
   });
 
