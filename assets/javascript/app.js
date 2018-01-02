@@ -65,5 +65,5 @@ $("#search").on("submit", function(event){
 	$("#searchbar").val('');
 });
 
-
+console.log(test);
 });
