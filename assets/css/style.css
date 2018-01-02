@@ -1,4 +1,14 @@
+#chatWindow{
+	max-height: 25vw;
+	overflow: auto;
+	width: 200px;
+}
 
+#chat{
+  max-width: 100%;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+}
 #container{
 	margin-left: 100px;
 	margin-right: 100px;
