@@ -49,3 +49,11 @@ th {
 header {
 	text-align: center;
 }
+
+#navButtons {
+	text-align: center;
+}
+
+#loginlogout {
+	text-align: right;
+}

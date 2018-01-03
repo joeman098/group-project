@@ -19,9 +19,26 @@
 </head>
 <body>
 	<header><h1>Pr0j3ct $ive</h1></header>
-	<button class="btn-info" data-toggle="modal" data-target="#loginmodal" >Log In </button> 
-	<button class="btn-info" data-toggle="modal" data-target="#registermodal" >Register </button>
-	<button class="btn-warning" id="logOut">logout</button>
+  <div class="container">
+    <div class="row">
+      <div class="col md-4 offset-md-4" id="navButtons">
+        <form action="">
+        <button class="btn-info" type="submit" formaction="index.html">Home </button> 
+        <button class="btn-info" type="submit" formaction="search.html">Search </button>
+        <button class="btn-info" type="submit" formaction="profile.html">Profile</button>
+        </form>
+      </div>
+
+
+      <div class="col md-4" id="loginlogout">
+	     <button class="btn-info" data-toggle="modal" data-target="#loginmodal" >Log In </button> 
+	     <button class="btn-info" data-toggle="modal" data-target="#registermodal" >Register </button>
+	     <button class="btn-warning" id="logOut">logout</button>
+      </div>
+
+    </div>
+  </div>
+  <br>
 
 	<form id="search">
 		<input type="text" name="search" id="searchbar">
@@ -45,6 +62,7 @@
    </tbody>
 </table>
 </div>
+
 
 	
 
