@@ -1,4 +1,5 @@
 #chatWindow{
+	height: 25vw;
 	max-height: 25vw;
 	overflow: auto;
 	width: 200px;
