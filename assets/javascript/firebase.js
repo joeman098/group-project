@@ -11,6 +11,7 @@
   firebase.initializeApp(config);
 
   var chatRef = firebase.database().ref("/chat");
+  var profileRef = firebase.database().ref("/profile");
   var displayName
   var email
   var photoURL
@@ -121,3 +122,4 @@ $("#logOut").on("click", function(){
   
 onLogIn();
 });
+
