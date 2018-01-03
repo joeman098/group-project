@@ -41,7 +41,7 @@ function apicall(){
 		newRow.append($("<td>").append($("<img>").attr("src","https://image.tmdb.org/t/p/w185_and_h278_bestv2/"+data.poster)))
 				.append($("<td id='title'>").html((data.title || data.tvtitle) +"<br>"+ (data.date|| data.tvdate)))
 				.append($("<td>").attr("id","description").text(data.overview))
-				.append($("<td>").append($("<button>").text("save").addClass("btn-info").attr("id","saveButton").attr("value",data.id)));
+				.append($("<td>").append($("<button>").text("save").addClass("btn-info").attr("id","saveButton").attr("value",data.id).attr("data",type)));
 
 				if(!loged){
 					$("#saveButton").attr("id","notloged").text("log In to save");
@@ -53,20 +53,7 @@ function apicall(){
 
 		
 	};
-	$("#resultTable").on("click","#saveButton", function(){
-			
-			var id = this.value
-			console.log(id);
-			console.log(email);
 
-			profileRef.push().set({
-				id : id,
-				
-			});
-		
-
-		
-		})
 });
 };
 
@@ -87,6 +74,24 @@ $("#search").on("submit", function(event){
 	// $("#container").append($("<button>").text("save").addClass("btn-info").attr("id","saveButton"));
  // };
 });
+
+	$("#resultTable").on("click","#saveButton", function(){
+			
+			var id = this.value;
+			var typeid = $(this).attr("data");
+			console.log(id);
+			console.log(typeid);
+			console.log(email);
+
+			profileRef.push().set({
+				id : id,
+				typeid : typeid,
+				
+			});
+		
+
+		
+		});
 
 
 });
