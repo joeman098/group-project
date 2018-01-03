@@ -3,12 +3,27 @@ function displayChatMessage(name, text) {
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')
         [0].scrollHeight;
 };
+function displayProfile(id){
+	 $("#profileDump").append("<button>");
+};
 
 
-      chatRef.on('child_added', function(snapshot) {
+     var chatRef.on('child_added', function(snapshot) {
         var message = snapshot.val();
         displayChatMessage(message.name, message.text);
       });
+
+     var profileRef.on("child_added",function(snapshot){
+     	var itemid = snapshot.val
+     	displayProfile(itemid.id)
+     })
+
+
+
+
+
+
+
 
 $(document).ready(function(){
 
@@ -21,3 +36,4 @@ $(document).ready(function(){
         }
       });
 });
+

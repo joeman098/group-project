@@ -11,12 +11,13 @@
   firebase.initializeApp(config);
 
   var chatRef = firebase.database().ref("/chat");
-  var profileRef = firebase.database().ref("/profile");
+  var profileRef = firebase.database().ref("/profile/" + uid);
   var displayName
   var email
   var photoURL
   var isAnonymous
   var providerData
+  var uid
 
   var loged = false ;
 
