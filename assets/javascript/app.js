@@ -54,16 +54,16 @@ function apicall(){
 		
 	};
 	$("#resultTable").on("click","#saveButton", function(){
+			
 			var id = this.value
 			console.log(id);
 			console.log(email);
 
 			profileRef.push().set({
 				id : id,
+				
 			});
-			if(profileRef.length > 1){
-				alert("test");
-			};
+		
 
 		
 		})

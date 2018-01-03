@@ -11,16 +11,14 @@
   firebase.initializeApp(config);
 
   var chatRef = firebase.database().ref("/chat");
-  var profileRef = firebase.database().ref("/profile");
   var displayName
   var email
   var photoURL
   var isAnonymous
   var providerData
-
+  var uid
   var loged = false ;
-
-
+  var profileRef ;
 
 
 
@@ -52,7 +50,7 @@ function onLogIn(){
     //all the loginshit goes here 
 
     if(user){
-      alert("HAHA")
+      // alert("HAHA")
         // User is signed in.
     displayName = user.displayName;
     email = user.email;
@@ -62,7 +60,8 @@ function onLogIn(){
     uid = user.uid;
     providerData = user.providerData;
     loged = true;
-
+    profileRef = firebase.database().ref("/profile/" + uid);
+    localStorage.setItem("uid", uid);
     // ...
           } 
 else {
