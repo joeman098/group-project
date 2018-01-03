@@ -1,9 +1,16 @@
 var type 
 var query
+var testurl = $(location).attr("href");
+console.log(testurl);
+var splitUrl =testurl.split(/[^A-Za-z]/);
+console.log(splitUrl);
 
 
-
-
+function homeSearch(){
+	type = splitUrl[15];
+	query = splitUrl[13];
+	apicall();
+}
 
 function apicall(){
 	var url = "https://api.themoviedb.org/3/search/"+type;
@@ -92,6 +99,6 @@ $("#search").on("submit", function(event){
 
 		
 		});
-
+homeSearch();
 
 });

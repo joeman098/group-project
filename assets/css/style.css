@@ -32,6 +32,16 @@ th {
 	font-size: 50px;
 }
 
+#searchz {
+	text-align: center;
+}
+
+#searchSubmitz {
+	background-color: #9933CC;
+	font-weight: bold;
+	color: white;
+	border-color: #9933CC;
+}
 #search {
 	text-align: center;
 }
@@ -57,4 +67,7 @@ header {
 
 #loginlogout {
 	text-align: right;
+}
+.card{
+	display: inline-grid;
 }
