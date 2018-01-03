@@ -4,19 +4,23 @@ function displayChatMessage(name, text) {
         [0].scrollHeight;
 };
 function displayProfile(id){
-	 $("#profileDump").append("<button>");
+	 $("#profileDump").append($("<button>").text(id));
 };
 
+var uidref = localStorage.getItem("uid");
+var profileRef = firebase.database().ref("/profile/" + uidref);
 
-     var chatRef.on('child_added', function(snapshot) {
+
+    chatRef.on('child_added', function(snapshot) {
         var message = snapshot.val();
         displayChatMessage(message.name, message.text);
       });
 
-     var profileRef.on("child_added",function(snapshot){
-     	var itemid = snapshot.val
-     	displayProfile(itemid.id)
-     })
+     profileRef.on('child_added', function(snapshot){
+     	var itemid = snapshot.val();
+     	console.log(itemid);
+     	displayProfile(itemid.id);
+     });
 
 
 
@@ -26,7 +30,7 @@ function displayProfile(id){
 
 
 $(document).ready(function(){
-
+console.log(window.uid);
   $('#messageInput').keypress(function (event) {
         if (event.keyCode == 13) {
           var name = email ;
@@ -35,5 +39,7 @@ $(document).ready(function(){
           $('#messageInput').val('');
         }
       });
+console.log(profileRef);
+
 });
 
