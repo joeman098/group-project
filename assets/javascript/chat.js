@@ -61,7 +61,7 @@ function onAir(id){
 	$("#airDump").empty();
 	for(i = 0 ; response.results.length > i ; i++){
 		if(numberid.includes(response.results[i].id)){
-			$("#airDump").append($("<img>").attr("src","https://image.tmdb.org/t/p/w185_and_h278_bestv2/"+response.results[i].poster_path));
+			$("#airDump").append($("<img id='onairimg'>").attr("src","https://image.tmdb.org/t/p/w185_and_h278_bestv2/"+response.results[i].poster_path));
 
 		};
 	};

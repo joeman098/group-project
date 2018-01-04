@@ -71,3 +71,19 @@ header {
 .card{
 	display: inline-grid;
 }
+
+#profileDump {
+	text-align: center;
+}
+
+#profileDiv {
+	margin: 10px;
+}
+
+#airDump {
+	text-align: center;
+}
+
+#onairimg {
+	margin: 10px;
+}
