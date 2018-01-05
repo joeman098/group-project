@@ -19,7 +19,7 @@
   var uid
   var loged = false ;
   var profileRef ;
-
+  
 
 
 
