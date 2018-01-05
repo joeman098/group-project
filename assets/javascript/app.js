@@ -67,12 +67,13 @@ function apicall(){
 
 function geoData(){
 		$.ajax({
-		url: "http://ip-api.com/json/",
+		url: "https://timezoneapi.io/api/ip",
 		method: "GET",
 	
 }).done(function(response) {
 	 geoData = response ;
 	console.log(geoData);
+	$("#creep").text("From: " +geoData.data.city+ "" +"  Date: "+geoData.data.datetime.date )
 	weather();
 });
 }
@@ -81,7 +82,7 @@ function weather(){
 	var url = "api.openweathermap.org/data/2.5/weather"
 	url += '?' + $.param({ 
 		'APPID':"192ef565f6f726a026cab22fe6ad49c8",
-		"zip": geoData.zip,
+		"zip": geoData.data.postal,
 
 	})
 
