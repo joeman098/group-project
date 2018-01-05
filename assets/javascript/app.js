@@ -131,6 +131,6 @@ $("#search").on("submit", function(event){
             
 		
 		});
-homeSearch();
+
 geoData();
 });
