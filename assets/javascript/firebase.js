@@ -104,13 +104,13 @@ $(document).ready(function(){
   $("#registerForm").on("submit", function(event){
     event.preventDefault();
     newAccount();
-     $("#loginmodal").modal("toggle");
+     $("#registermodal").modal("toggle");
   });
 
   $("#logIn").on("submit",function(event){
      event.preventDefault();
      logIn();
-     $("#registermodal").modal("toggle");
+     $("#loginmodal").modal("toggle");
     });
 
 

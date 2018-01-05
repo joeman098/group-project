@@ -74,7 +74,7 @@ function geoData(){
 	 geoData = response ;
 	console.log(geoData);
 	$("#creep").text("From: " +geoData.data.city+ "" +"  Date: "+geoData.data.datetime.date )
-	weather();
+	// weather();
 });
 }
 
