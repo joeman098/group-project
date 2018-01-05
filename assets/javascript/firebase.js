@@ -62,6 +62,7 @@ function onLogIn(){
     loged = true;
     profileRef = firebase.database().ref("/profile/" + uid);
     localStorage.setItem("uid", uid);
+    $("#emailShow").text("Current User:" +email);
     // ...
           } 
 else {
@@ -103,11 +104,13 @@ $(document).ready(function(){
   $("#registerForm").on("submit", function(event){
     event.preventDefault();
     newAccount();
+     $("#loginmodal").modal("toggle");
   });
 
   $("#logIn").on("submit",function(event){
      event.preventDefault();
      logIn();
+     $("#registermodal").modal("toggle");
     });
 
 
