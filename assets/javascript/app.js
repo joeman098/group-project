@@ -1,5 +1,6 @@
 var type 
 var query
+var geoData 
 var testurl = $(location).attr("href");
 console.log(testurl);
 var splitUrl =testurl.split(/[^A-Za-z]/);
@@ -64,8 +65,36 @@ function apicall(){
 });
 };
 
+function geoData(){
+		$.ajax({
+		url: "http://ip-api.com/json/",
+		method: "GET",
+	
+}).done(function(response) {
+	 geoData = response ;
+	console.log(geoData);
+	weather();
+});
+}
+
+function weather(){
+	var url = "api.openweathermap.org/data/2.5/weather"
+	url += '?' + $.param({ 
+		'APPID':"192ef565f6f726a026cab22fe6ad49c8",
+		"zip": geoData.zip,
+
+	})
 
 
+	$.ajax({
+		url: url,
+		method: "GET",
+	
+}).done(function(response) {
+	console.log(response);
+
+});
+};
 $(document).ready(function(){
 
 $("#search").on("submit", function(event){
@@ -96,9 +125,11 @@ $("#search").on("submit", function(event){
 				
 			});
 		
+       
 
+            
 		
 		});
 homeSearch();
-
+geoData();
 });
