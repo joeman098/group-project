@@ -1,11 +1,12 @@
 #chatWindow{
-	height: 25vw;
-	max-height: 25vw;
+	height: 35vw;
+	max-height: 55vw;
 	overflow: auto;
 	width: 200px;
 }
 
 #chat{
+   
   max-width: 100%;
   margin: 10px auto;
   border: 1px solid #ccc;
